@@ -9,8 +9,6 @@ def getTotalRankData(htmlPage):
 
     tbs = htm("table table").eq(1)
 
-    # titles = tbs.find('tr').filter(lambda i: i == 1)
-
     trs = tbs.find('tr').filter(lambda i: i > 0)
 
     dataTable = []
@@ -44,8 +42,16 @@ def getTotalRankData(htmlPage):
 def loginResult(htmlPage):
 
     htm = pq(htmlPage)
-    # htm = pq(filename="./htmlPages/MBABEST21- Student.htm")
-    result = htm.find("form").children("input")
-    # print(result)
-    # print(result.val())
+
+    result = htm.find("imput:last")
+
     return result.val()
+
+
+def getQuarterCount(htmlPage):
+
+    htm = pq(htmlPage)
+
+    result = htm.find("option:last").val()
+
+    return result

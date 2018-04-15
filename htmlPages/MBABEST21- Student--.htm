@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0050)http://219.216.69.243:88/mbabest21/CpyResViewAC.do -->
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+ <TITLE>MBABEST21- Student </TITLE> <LINK href="MBABEST21-%20Student--_files/mbabest21.css" 
+rel="stylesheet" type="text/css"> 
+<META http-equiv="Content-Language" content="ja"> 
+<META http-equiv="Content-Type" content="text/html; charset=Shift-JIS"> 
+<SCRIPT language="javascript">
+<!--
+var sid = "632D4CAFA51B31B2D9180B862C3CC347";
+
+//ADD BEGIN FOR 1.01 BY ZHOUWEI 2005/10/18
+function doInit(){
+        document.forms("cpyResViewAF").elements("listQuarterSelect").value = "10";
+}
+//ADD END FOR 1.01 BY ZHOUWEI 2005/10/18
+
+function doViewResults(){
+    var account= document.forms("cpyResViewAF").elements("accountselect");
+    var quarter = document.forms("cpyResViewAF").elements("listQuarterSelect").value;
+    if(account[0].checked ){
+        sw=window.open('comFinaAccountAC.do?quarter='+ quarter + "&simucheck=1" + "&type=Cpy",
+                        'finaAccount' + sid,
+                        'width=680,scrollbars=yes,status=yes,toolbar=yes,menubar=yes,location=no,resizable=yes');
+        sw.focus();
+    }else{
+        sw=window.open('comTotalRankingAC.do?quarter=' + quarter + "&type=Cpy",
+                        'totalRank' + sid,
+                        'width=680,scrollbars=yes,status=yes,toolbar=yes,menubar=yes,location=no,resizable=yes');
+        sw.focus();
+    }
+}
+function doLogout(){
+    if (confirm('Are you sure to exit?') == true){
+        window.location = "ComLogoutAC.do?type=Cpy";
+    }
+}
+-->
+</SCRIPT>
+ 
+<META name="GENERATOR" content="MSHTML 11.00.10570.1001"></HEAD> <!-- MOD BEGIN FOR 1.01 BY ZHOUWEI 2005/10/18 --> <!-- <body> --> 
+<BODY onload="doInit()"><!-- MOD END FOR 1.01 BY ZHOUWEI 2005/10/18 --> 
+<FORM name="cpyResViewAF" action="/mbabest21/CpyResViewAC.do" method="post">
+<TABLE width="960" bgcolor="#000066" border="0">
+  <TBODY>
+  <TR valign="bottom">
+    <TD width="87"><SPAN class="style1">MB<!--MB--><SPAN class="style4">A<!--A--></SPAN>BEST21<!--BEST21--></SPAN></TD>
+    <TD width="727"><SPAN class="style2">[Game Name:2015DSS UDisk - YU] 
+      [Company Name:C07Partner] [Quarter :11]</SPAN></TD></TR></TBODY></TABLE>
+<TABLE width="960" bgcolor="#3399ff" border="0">
+  <TBODY>
+  <TR valign="bottom">
+    <TD width="111"><SPAN class="style2">Student Home<!-- Student Home--> 
+      </SPAN></TD>
+    <TD width="130"><SPAN class="style2">&gt;&gt;View Results<!-- View Results --> 
+      </SPAN></TD>
+    <TD width="602">&nbsp;</TD>
+    <TD width="99"><SPAN class="style9"><A onclick="doLogout()" href="http://219.216.69.243:88/mbabest21/CpyResViewAC.do#">Logout<!-- Logout --></A></SPAN></TD></TR></TBODY></TABLE>
+<TABLE width="960" border="0" cellspacing="0">
+  <TBODY>
+  <TR>
+    <TD height="370" align="center" valign="top" colspan="10">&nbsp;<BR>
+      <TABLE width="900" height="340" border="0">
+        <TBODY>
+        <TR class="style6">
+          <TD width="130" height="32" class="style6" bgcolor="#dddddd">
+            <DIV align="center"><A href="http://219.216.69.243:88/mbabest21/CpyDecisiedCheckAC.do"><FONT 
+            color="black"><U>Decision 
+            Making<!-- Decision Making --></U></FONT></A></DIV></TD>
+          <TD width="130" class="style6" bgcolor="#bbbbbb">
+            <DIV align="center">View Results<!-- View Results --></DIV></TD>
+          <TD width="130" class="style6" bgcolor="#dddddd">
+            <DIV align="center"><A href="http://219.216.69.243:88/mbabest21/CpyInfoInputAC.do"><FONT 
+            color="black"><U>Set Company 
+            Profile<!-- Set Company Profile --></U></FONT></A></DIV></TD>
+          <TD width="130" class="style6">&nbsp;</TD>
+          <TD width="130" class="style6">&nbsp;</TD>
+          <TD width="130" class="style6">&nbsp;</TD>
+          <TD width="90">&nbsp;</TD></TR>
+        <TR class="style6" valign="top" bgcolor="#bbbbbb">
+          <TD colspan="7"><BR>
+            <TABLE width="938" height="233" border="0">
+              <TBODY>
+              <TR bgcolor="#eeeeee">
+                <TD height="28" class="style6">
+                  <TABLE width="766" border="0">
+                    <TBODY>
+                    <TR>
+                      <TD width="80" class="style6">Select Report<!-- Select Report --></TD>
+                      <TD width="150"><INPUT name="accountselect" type="radio" 
+                        checked="" value="FinancialStatements">                  
+                           <SPAN class="style6">Financial Statements<!--Financial Statements --></SPAN></TD>
+                      <TD width="160"><INPUT name="accountselect" type="radio" 
+                        value="TotalRankingReport">                     <SPAN 
+                        class="style6">Total Ranking Report<!--Total Ranking Report --></SPAN></TD>
+                      <TD width="358"><SPAN class="style6">Quarter<!--Quarter--></SPAN> 
+                                           <SELECT 
+                          name="listQuarterSelect"><OPTION value="0">0</OPTION>  
+                                                                     <OPTION 
+                          value="1">1</OPTION>                                   
+                                    <OPTION value="2">2</OPTION>                 
+                                                      <OPTION 
+                          value="3">3</OPTION>                                   
+                                    <OPTION value="4">4</OPTION>                 
+                                                      <OPTION 
+                          value="5">5</OPTION>                                   
+                                    <OPTION value="6">6</OPTION>                 
+                                                      <OPTION 
+                          value="7">7</OPTION>                                   
+                                    <OPTION value="8">8</OPTION>                 
+                                                      <OPTION 
+                          value="9">9</OPTION>                                   
+                                    <OPTION 
+                    value="10">10</OPTION></SELECT></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD>&nbsp;</TD></TR></TBODY></TABLE>
+            <TABLE width="938" border="0">
+              <TBODY>
+              <TR>
+                <TD bgcolor="#dddddd">
+                  <TABLE width="880" border="0">
+                    <TBODY>
+                    <TR>
+                      <TD width="20" bgcolor="#dddddd">&nbsp;</TD>
+                      <TD width="120" align="center" 
+bgcolor="#dddddd"><INPUT name="viewresult" style="width: 100px;" onclick="doViewResults()" type="button" value="View Results"><!--  View Results   --></TD>
+                      <TD width="120" align="center" 
+                      bgcolor="#dddddd">&nbsp;</TD>
+                      <TD width="120" align="center" 
+                      bgcolor="#dddddd">&nbsp;</TD>
+                      <TD width="120" align="center" 
+                      bgcolor="#dddddd">&nbsp;</TD>
+                      <TD width="120" align="center" 
+                      bgcolor="#dddddd">&nbsp;</TD>
+                      <TD width="106" bgcolor="#dddddd">&nbsp;</TD>
+                      <TD width="120" align="center" 
+                      bgcolor="#dddddd">&nbsp;</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD height="8" bgcolor="#dddddd">&nbsp;</TD>
+    <TD height="8" bgcolor="#dddddd">&nbsp;</TD>
+    <TD height="8" bgcolor="#dddddd">&nbsp;</TD>
+    <TD height="8" bgcolor="#dddddd">&nbsp;</TD>
+    <TD height="8" bgcolor="#dddddd">&nbsp;</TD>
+    <TD height="8" bgcolor="#dddddd">&nbsp;</TD>
+    <TD height="8" bgcolor="#dddddd">&nbsp;</TD>
+    <TD height="8" bgcolor="#dddddd">&nbsp;</TD>
+    <TD height="8" bgcolor="#dddddd">&nbsp;</TD>
+    <TD height="8" bgcolor="#dddddd">&nbsp;</TD></TR>
+  <TR>
+    <TD width="78" bgcolor="#dddddd">
+      <P>&nbsp;    </P></TD>
+    <TD width="77" bgcolor="#dddddd"><!--  Exit Game   --></TD>
+    <TD width="81" bgcolor="#dddddd">&nbsp;</TD>
+    <TD width="46" bgcolor="#dddddd">&nbsp;</TD>
+    <TD width="108" bgcolor="#dddddd">&nbsp;</TD>
+    <TD width="190" bgcolor="#dddddd">&nbsp;</TD>
+    <TD width="90" bgcolor="#dddddd">&nbsp;</TD>
+    <TD width="91" bgcolor="#dddddd">&nbsp;</TD>
+    <TD width="106" bgcolor="#dddddd">&nbsp;</TD>
+    <TD width="113" bgcolor="#dddddd">&nbsp;</TD></TR>
+  <TR>
+    <TD height="90" bgcolor="#dddddd" colspan="10">&nbsp;&nbsp;<SPAN class="style6">Operation 
+      Guide<!--Operation Guide--></SPAN><BR>
+      <DIV 
+align="center"><TEXTAREA name="textarea" class="style6" rows="5" cols="137" readonly="">You can create two types of reports: Financial Statements (Income Statement, Balance Sheet, and Cash Flow Statement) and Total Ranking Reports. Perform this procedure after the instructor tells you that calculation processing is finished and the result can be displayed.</TEXTAREA> 
+          </DIV></TD></TR></TBODY></TABLE>
+<TABLE width="960" bgcolor="#000066" border="0">
+  <TBODY>
+  <TR>
+    <TD><SPAN class="style5">Copyright &copy; 2005 - 2006 GSIM,Aoyama Gakuin 
+      University. All Rights Reserved.<!--Copyright &copy; 2005 GSIM,Aoyama Gakuin University. All Rights Reserved. --></SPAN></TD></TR></TBODY></TABLE></FORM></BODY></HTML>
