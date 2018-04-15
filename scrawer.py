@@ -9,18 +9,14 @@ def GetQuarter(userData):
 
     loginResult = s.post(
         "http://219.216.69.243:88/mbabest21/CpyLoginAC.do", data=userData)
+    loginResult = pyqu.loginResult(loginResult.text)
+    if loginResult == 1 or loginResult == 4:
+        return -1
 
-    print(loginResult.text)
+    quarterPage = s.get(
+        'http://219.216.69.243:88/mbabest21/CpyResViewAC.do')
 
-    # print(pyqu.loginResult(loginResult.text))
-
-    # if pyqu.loginResult(loginResult.text) != 0:
-    #     return -1
-
-    # quarterPage = s.get(
-    #     'http://219.216.69.243:88/mbabest21/CpyResViewAC.do')
-
-    # return pyqu.getQuarterCount(quarterPage.text)
+    return pyqu.getQuarterCount(quarterPage.text)
 
 
 def GetTotalRank(session):
@@ -66,4 +62,4 @@ user = {
     "cpyPwd": "dss"
 }
 
-GetQuarter(user)
+print(GetQuarter(user))
