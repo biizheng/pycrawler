@@ -3,6 +3,24 @@ from pyquery import PyQuery as pq
 import sys
 
 
+def loginResult(htmlPage):
+
+    htm = pq(htmlPage)
+
+    result = htm.find("imput:last")
+
+    return result.val()
+
+
+def getQuarterCount(htmlPage):
+
+    htm = pq(htmlPage)
+
+    result = htm.find("option:last").val()
+
+    return result
+
+
 def getTotalRankData(htmlPage):
 
     htm = pq(htmlPage)
@@ -39,19 +57,10 @@ def getTotalRankData(htmlPage):
     return dataTable
 
 
-def loginResult(htmlPage):
+def getDession(htmlPage):
 
     htm = pq(htmlPage)
 
-    result = htm.find("imput:last")
+    result = htm.find("table").children("tr").eq(5).children("td").eq(2)
 
-    return result.val()
-
-
-def getQuarterCount(htmlPage):
-
-    htm = pq(htmlPage)
-
-    result = htm.find("option:last").val()
-
-    return result
+    plan_and_record = result.children("table")

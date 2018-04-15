@@ -2,31 +2,44 @@ import requests
 import pyqu
 
 
-def GetQuarter(userData):
-    s = requests.Session()
+def Login(userData):
 
-    s.get("http://219.216.69.243:88/mbabest21/CpyLogin.jsp")
+    session = requests.Session()
 
-    loginResult = s.post(
+    session.get("http://219.216.69.243:88/mbabest21/CpyLogin.jsp")
+
+    loginResult = session.post(
         "http://219.216.69.243:88/mbabest21/CpyLoginAC.do", data=userData)
+
     loginResult = pyqu.loginResult(loginResult.text)
+
     if loginResult == 1 or loginResult == 4:
         return -1
 
-    quarterPage = s.get(
+    return session
+
+
+def GetQuarter(session):
+
+    quarterPage = session.get(
         'http://219.216.69.243:88/mbabest21/CpyResViewAC.do')
 
     return pyqu.getQuarterCount(quarterPage.text)
 
 
-def GetTotalRank(session):
+def GetTotalRank(session, quarter):
 
     response = session.get(
-        "http://219.216.69.243:88/mbabest21/comTotalRankingAC.do?quarter=1&type=Cpy")
+        "http://219.216.69.243:88/mbabest21/comTotalRankingAC.do?quarter=%d&type=Cpy" % (quarter))
 
-    pyqu.getTotalRankData(response.text)
+    return pyqu.getTotalRankData(response.text)
 
-    return
+
+def GetDession(session, quarter):
+    response = session.get(
+        "http://219.216.69.243:88/mbabest21/comFinaAccountAC.do?quarter=%d&simucheck=1&type=Cpy" % (quarter))
+
+    return pyqu.getDession(response.text)
 
 
 def GenerateUser(userData, tag='NextCompany'):
@@ -62,4 +75,6 @@ user = {
     "cpyPwd": "dss"
 }
 
-print(GetQuarter(user))
+session = Login(user)
+
+GetDession(session, 1)
