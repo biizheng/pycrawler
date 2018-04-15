@@ -1,0 +1,206 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0047)http://219.216.69.243:88/mbabest21/CpyLogin.jsp -->
+<HTML>
+
+<HEAD>
+  <META content="IE=5.0000" http-equiv="X-UA-Compatible">
+  <TITLE>MBABEST21- Student </TITLE>
+  <LINK href="MBABEST21-%20Student_files/mbabest21.css" rel="stylesheet" type="text/css">
+  <META http-equiv="Content-Language" content="ja">
+  <META http-equiv="Content-Type" content="text/html; charset=Shift-JIS">
+  <SCRIPT language="javascript" src="MBABEST21-%20Student_files/inputchecker.js"></SCRIPT>
+
+  <SCRIPT language="javascript">
+    <!--
+    function doInit() {
+      if (document.forms("cpyLoginAF").elements("flag").value == '1') {
+        alert("Login failed. Please check your  Entry code  and Password and input again.");
+
+      }
+      if (document.forms("cpyLoginAF").elements("flag").value == '2') {
+        alert("The game is not available because the instructor is locked.");
+
+      }
+      if (document.forms("cpyLoginAF").elements("flag").value == '3') {
+        alert("The game has not started yet.");
+
+      }
+      if (document.forms("cpyLoginAF").elements("flag").value == '4') {
+        alert("The company had quit from the game and can not participate again.");
+
+      }
+      document.forms("cpyLoginAF").elements("cpyEntryCode").focus();
+    }
+
+    function checkENvalue1(val) {
+      // set return value
+      var res = false;
+
+      // if input value is "" ,then return true.
+      if (val == "") {
+        res = true;
+      } else {
+        //���p���� ���p�A���t�@�x�b�g �}�b�`���鐳�K�\���I�u�W�F�N�g�쐬
+        var reg_str = "[\u0030-\u0039,\u0041-\u005A,\u0061-\u007A,\u002D]";
+        //","
+        var reg_str2 = "[\u002C]";
+        // Create regular expression object
+        var reg_obj = new RegExp(reg_str);
+        var reg_obj2 = new RegExp(reg_str2);
+
+        // check input value
+        for (var i = 0; i < val.length; i++) {
+
+          //check every input character with regular expression
+          res = reg_obj.test(val.charAt(i));
+          res2 = reg_obj2.test(val.charAt(i));
+          // if include unregular character then skip over this circle
+          if (res == false || res2 == true) {
+            res = false;
+            break;
+          }
+        }
+      }
+      return res;
+    }
+
+    function doCheck() {
+      var entrycode = trim(document.forms("cpyLoginAF").elements("cpyEntryCode"));
+      var password = trim(document.forms("cpyLoginAF").elements("cpyPwd"));
+      if (entrycode == null || entrycode == '') {
+        alert("Entry Code is left unfilled. Please enter.");
+        document.forms("cpyLoginAF").elements("cpyEntryCode").focus();
+        return false;
+      }
+      if (!checkENvalue1(entrycode)) {
+        alert("Only alphanumeric character and '-'can be alloweed in entrycode.");
+        document.forms("cpyLoginAF").elements("cpyEntryCode").focus();
+        return false;
+      }
+      if (password == null || password == '') {
+        alert("Password is left unfilled. Please enter.");
+        document.forms("cpyLoginAF").elements("cpyPwd").focus();
+        return false;
+      }
+      if (!checkENValue(password)) {
+        alert("Only alphanumeric character can be alloweed in password.");
+        document.forms("cpyLoginAF").elements("cpyPwd").focus();
+        return false;
+      }
+      return true;
+    }
+
+    function doExit() {
+      if (confirm("Are you sure to exit from Student Login?") == true) {
+        window.opener = "Login";
+        window.close();
+      }
+    }
+
+    function doLogin() {
+      if (doCheck() == true) {
+        document.forms("cpyLoginAF").submit();
+      }
+    }
+    -->
+  </SCRIPT>
+
+  <META name="GENERATOR" content="MSHTML 11.00.10570.1001">
+</HEAD>
+
+<BODY onload="doInit()">
+  <FORM name="cpyLoginAF" action="/mbabest21/CpyLoginAC.do" method="post">
+    <TABLE width="960" bgcolor="#000066" border="0">
+      <TBODY>
+        <TR valign="bottom">
+          <TD width="87">
+            <SPAN class="style1">
+              <!--MB-->MB
+              <SPAN class="style4">A</SPAN>BEST21</SPAN>
+          </TD>
+          <TD width="727">
+            <SPAN class="style2">Student Login
+            </SPAN>
+          </TD>
+        </TR>
+      </TBODY>
+    </TABLE>
+    <TABLE width="960" border="0">
+      <TBODY>
+        <TR>
+          <TD height="300" align="center" valign="middle">
+            <IMG width="670" height="270" src="MBABEST21-%20Student_files/aoyama_mba01.jpg">
+          </TD>
+        </TR>
+        <TR>
+          <TD height="220" bgcolor="#dddddd">
+            <TABLE width="600" align="center" border="0">
+              <TBODY>
+                <TR>
+                  <TD colspan="4">
+                    <DIV align="center">Please input Entry code and password of MBABEST21. </DIV>
+                  </TD>
+                </TR>
+                <TR>
+                  <TD>&nbsp;</TD>
+                  <TD>&nbsp;</TD>
+                  <TD>&nbsp;</TD>
+                  <TD>&nbsp;</TD>
+                </TR>
+                <TR>
+                  <TD>&nbsp;</TD>
+                  <TD>
+                    <DIV align="center">Entry Code </DIV>
+                  </TD>
+                  <TD width="200">
+                    <INPUT name="cpyEntryCode" style="width: 115px;" type="text" maxlength="14">
+                  </TD>
+                  <TD width="200">&nbsp; </TD>
+                </TR>
+                <TR>
+                  <TD>&nbsp;</TD>
+                  <TD>
+                    <DIV align="center">Password</DIV>
+                  </TD>
+                  <TD width="200">
+                    <INPUT name="cpyPwd" style="width: 115px;" type="password" maxlength="8">
+                  </TD>
+                  <TD width="200">&nbsp;</TD>
+                </TR>
+                <TR>
+                  <TD width="150">&nbsp;</TD>
+                  <TD width="150">&nbsp;</TD>
+                  <TD width="150">&nbsp;</TD>
+                  <TD width="150">&nbsp;</TD>
+                </TR>
+                <TR>
+                  <TD align="right">&nbsp;</TD>
+                  <TD align="right">
+                    <INPUT style="width: 100px;" onclick="doLogin()" type="button" value="Login">
+                  </TD>
+                  <TD>
+                    <INPUT style="width: 100px;" onclick="doExit()" type="button" value="Exit">
+                  </TD>
+                  <TD>&nbsp;</TD>
+                </TR>
+              </TBODY>
+            </TABLE>
+          </TD>
+        </TR>
+      </TBODY>
+    </TABLE>
+    <TABLE width="960" bgcolor="#000066" border="0">
+      <TBODY>
+        <TR>
+          <TD width="994">
+            <SPAN class="style5">Copyright &copy; 2005 - 2006 GSIM,Aoyama Gakuin University. All Rights Reserved.
+            </SPAN>
+          </TD>
+        </TR>
+      </TBODY>
+    </TABLE>
+    <INPUT name="flag" type="hidden" value="1">
+  </FORM>
+</BODY>
+
+</HTML>
