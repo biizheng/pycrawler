@@ -6,17 +6,17 @@ def Login(userData):
 
     session = requests.Session()
 
-    session.get("http://219.216.69.243:88/mbabest21/CpyLogin.jsp")
+    # session.get("http://219.216.69.243:88/mbabest21/CpyLogin.jsp")
 
     loginResult = session.post(
         "http://219.216.69.243:88/mbabest21/CpyLoginAC.do", data=userData)
 
     loginResult = pyqu.loginResult(loginResult.text)
 
-    if loginResult == 1 or loginResult == 4:
-        return -1
+    # if loginResult == 1 or loginResult == 4:
+    #     return -1
 
-    return session
+    # return session
 
 
 def GetQuarter(session):
@@ -35,12 +35,11 @@ def GetTotalRank(session, quarter):
     return pyqu.getTotalRankData(response.text)
 
 
-def GetDession(session, quarter):
-    response = session.get(
-        "http://219.216.69.243:88/mbabest21/comFinaAccountAC.do?quarter=%d&simucheck=1&type=Cpy" % (quarter))
+# def GetDession(session, quarter):
+#     response = session.get(
+#         "http://219.216.69.243:88/mbabest21/comFinaAccountAC.do?quarter=%d&simucheck=1&type=Cpy" % (quarter))
 
-    return pyqu.getDession(response.text)
-
+#     return pyqu.getDession(response.text)
 
 def GenerateUser(userData, tag='NextCompany'):
 
@@ -70,11 +69,11 @@ def GenerateUser(userData, tag='NextCompany'):
 #-----------main-------------------------------
 
 
-user = {
-    "cpyEntryCode": "U001-G018-C001",
-    "cpyPwd": "dss"
-}
+# user = {
+#     "cpyEntryCode": "U001-G019-C001",
+#     "cpyPwd": "dss"
+# }
 
-session = Login(user)
+# session = Login(user)
 
-GetDession(session, 1)
+# print(session)

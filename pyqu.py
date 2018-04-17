@@ -7,9 +7,11 @@ def loginResult(htmlPage):
 
     htm = pq(htmlPage)
 
-    result = htm.find("imput:last")
+    result = htm.find("input:last")
 
-    return result.val()
+    print(result)
+
+    return 1
 
 
 def getQuarterCount(htmlPage):
@@ -18,7 +20,7 @@ def getQuarterCount(htmlPage):
 
     result = htm.find("option:last").val()
 
-    return result
+    return int(result)
 
 
 def getTotalRankData(htmlPage):
@@ -59,8 +61,30 @@ def getTotalRankData(htmlPage):
 
 def getDession(htmlPage):
 
+    paln = {}
+
+    # record = {}
+
     htm = pq(htmlPage)
 
     result = htm.find("table").children("tr").eq(5).children("td").eq(2)
 
     plan_and_record = result.children("table")
+
+    plan = plan_and_record("table").eq(0)
+
+    plan = plan.find("span").filter(".stylereport20")
+
+    plan.filter(lambda i, this: pq(this).text() == "").remove()
+    # for index, item in enumerate(plan.items()):
+    #     if item.text() == "":
+    #         item.remove()
+
+    for index, item in enumerate(plan.items()):
+        # if index % 2 == 0:
+        #     plan[item.text()] = plan.items()[index+1].text()
+        # else:
+        #     continue
+        print(index, "----", item.text())
+
+    # print(plan)
